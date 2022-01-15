@@ -46,6 +46,8 @@ public class Robot extends TimedRobot {
     boolean isPressed = oi.joystick.getRawButton(0);
     if(isPressed) {
       shooter.shoot();
+    } else {
+      shooter.stop();
     }
   }
 }

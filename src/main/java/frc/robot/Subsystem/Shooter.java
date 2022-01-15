@@ -25,10 +25,16 @@ public class Shooter {
         rTalon.set(ControlMode.Velocity, speed);
     }
 
+    public void stop() {
+        lTalon.set(ControlMode.PercentOutput, 0);
+        rTalon.set(ControlMode.PercentOutput, 0);
+    }
+
     private double calcSpeed(double distance) {
         if (distance < 0 || distance > 12) {
             return 0.0;
         } else {
+            // Distance between values
            return VelocityMap.map.floorEntry((int)Math.round(distance)).getValue();
         }
     }
